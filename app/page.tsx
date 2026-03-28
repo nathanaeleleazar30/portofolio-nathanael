@@ -95,7 +95,7 @@ export default function Home() {
             
             <div className="relative group cursor-pointer shrink-0 transition-transform duration-500 hover:scale-105">
               <img
-                src="/foto-profil.jpg" 
+                src="/foto-profil.JPG" 
                 alt="Foto Profil Nathanael"
                 className="w-40 h-40 md:w-56 md:h-56 rounded-full border-[6px] md:border-[8px] border-white object-cover shadow-2xl relative z-10 bg-slate-100"
               />
