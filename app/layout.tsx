@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "./ThemeContext"; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,7 +13,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
+  // Menambahkan metadataBase untuk menghilangkan warning Next.js
+  metadataBase: new URL('https://portofolio-nathanael.vercel.app/'),
   title: 'Nathanael Eleazar | IT Portfolio',
   description: 'Undergraduate IT Student at Universitas Brawijaya. UI/UX Designer, Multimedia Enthusiast, and Web Developer.',
   openGraph: {
@@ -22,7 +25,7 @@ export const metadata = {
     siteName: 'Nathanael Portfolio',
     images: [
       {
-        url: '/foto-profil.jpg', // Ini akan jadi gambar pratinjau saat link dibagikan
+        url: '/foto-profil.jpg', 
         width: 800,
         height: 600,
       },
@@ -41,8 +44,13 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning 
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
