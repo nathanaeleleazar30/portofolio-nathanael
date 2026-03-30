@@ -1,7 +1,9 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./ThemeContext"; 
+import { Analytics } from "@vercel/analytics/react"; // 1. Import Analytics Vercel
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +16,6 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  // Menambahkan metadataBase untuk menghilangkan warning Next.js
   metadataBase: new URL('https://portofolio-nathanael.vercel.app/'),
   title: 'Nathanael Eleazar | IT Portfolio',
   description: 'Undergraduate IT Student at Universitas Brawijaya. UI/UX Designer, Multimedia Enthusiast, and Web Developer.',
@@ -49,6 +50,8 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <ThemeProvider>
           {children}
+          {/* 2. Panggil Analytics di bawah children */}
+          <Analytics /> 
         </ThemeProvider>
       </body>
     </html>

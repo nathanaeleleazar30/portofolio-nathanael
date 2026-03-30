@@ -2,8 +2,29 @@
 
 @import "tailwindcss";
 
-/* Mengaktifkan dark mode berbasis class di Tailwind v4 */
-@custom-variant dark (&:is(.dark *));
+/* Pastikan menggunakan sintaks :where agar mencakup seluruh anak elemen */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
 
 @theme {
   --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
@@ -29,4 +50,27 @@
   body {
     @apply transition-colors duration-300;
   }
+}
+/* app/globals.css */
+/* ... kode sebelumnya biarkan saja ... */
+
+/* === CUSTOM SCROLLBAR === */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1; /* slate-300 */
+  border-radius: 20px;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background-color: #334155; /* slate-700 */
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8; /* slate-400 */
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #475569; /* slate-600 */
 }
