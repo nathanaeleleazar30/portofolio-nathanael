@@ -78,16 +78,6 @@ export default function ContactSection() {
         <ContactForm />
       </ScrollReveal>
 
-      <ScrollReveal>
-        <div className="bg-white dark:bg-slate-800/80 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-700/50 shadow-xl shadow-slate-200/40 dark:shadow-none transition-colors duration-300">
-          <h3 className="text-xl font-black text-slate-800 dark:text-white mb-6 flex items-center gap-3">Tech & Tools</h3>
-          <div className="space-y-6">
-            {hardSkills.map((skill, index) => (
-              <SkillBar key={index} skill={skill} />
-            ))}
-          </div>
-        </div>
-      </ScrollReveal>
     </>
   );
 }

@@ -21,6 +21,7 @@ export interface Experience {
 
 export interface Project {
   title: string;
+  slug: string;
   tech: string;
   description: string;
   gradient: string;

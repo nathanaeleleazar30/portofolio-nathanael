@@ -35,24 +35,28 @@ export const projectData: Project[] = [
   {
     title: 'VISTECH',
     tech: 'Relasi Strategis | IT Exposure',
-    description: 'Inisiatif program kerja di bawah Departemen Hubungan Eksternal untuk memperkuat relasi institusi dan industri luar.',
+    slug: 'it-exposure', // <-- Koma sudah ditambahkan di sini
+    description: 'Inisiatif program kerja di bawah Departemen Hubungan Eksternal. Target dari BPI HMPSTI untuk VISTECH pertama ini harus bagus dan mengincar company besar (perusahaan swasta/instansi skala Jawa Timur) untuk persiapan magang mahasiswa semester 4.',
     gradient: 'from-blue-600 to-indigo-700'
   },
   {
     title: 'Ramadhan Charity Connect',
     tech: 'Sosial | Manajemen Acara',
+    slug: 'ramadhan-charity-connect',
     description: 'Program sosial kolaboratif di bawah bendera HMPSTI untuk menjalin empati kemasyarakatan.',
     gradient: 'from-emerald-500 to-teal-600'
   },
   {
     title: 'Program Keolahragaan BEM',
     tech: 'Event Management | Leadership',
+    slug: 'program-keolahragaan-bem',
     description: 'Menginisiasi dan mengeksekusi berbagai wadah minat bakat olahraga bagi mahasiswa.',
     gradient: 'from-orange-500 to-rose-600'
   },
   {
     title: 'STIVOFEST 2026',
     tech: 'Festival Olahraga | Malang Raya',
+    slug: 'stivofest-2026',
     description: 'Menginisiasi event olahraga yang menjadi wadah kompetisi dan kolaborasi antar kampus di Malang Raya.',
     gradient: 'from-amber-600 to-amber-900'
   }
