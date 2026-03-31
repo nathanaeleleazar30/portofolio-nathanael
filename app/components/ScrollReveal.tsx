@@ -1,18 +1,39 @@
 // app/components/ScrollReveal.tsx
 'use client';
+import React, { useEffect, useRef, useState } from 'react';
 
-import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
+interface ScrollRevealProps {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+}
 
-export default function ScrollReveal({ children }: { children: ReactNode }) {
+export default function ScrollReveal({ children, delay = 0, className = '' }: ScrollRevealProps) {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+        observer.unobserve(entry.target);
+      }
+    }, { threshold: 0.1 });
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
+    <div
+      ref={ref}
+      style={{ transitionDelay: `${delay}ms` }}
+      className={`transition-all duration-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} ${className}`}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

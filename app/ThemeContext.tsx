@@ -1,3 +1,4 @@
+// app/ThemeContext.tsx
 'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
@@ -13,14 +14,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    // Mengecek preferensi tema saat komponen dimuat di client (browser)
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-      setIsDark(true);
-      document.documentElement.classList.add('dark');
-    }
+    // Sync state with HTML class set by the inline blocking script in layout.tsx
+    const isDarkMode = document.documentElement.classList.contains('dark');
+    setIsDark(isDarkMode);
   }, []);
 
   const toggleTheme = () => {
@@ -35,7 +31,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  // Kita buang if (!mounted) agar Provider SELALU tersedia untuk page.tsx
   return (
     <ThemeContext.Provider value={{ isDark, toggleTheme }}>
       {children}

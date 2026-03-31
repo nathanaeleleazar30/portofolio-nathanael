@@ -1,13 +1,14 @@
 // app/data/portfolio.ts
+import { NavLink, Skill, Experience, Project } from '../../types/portfolio';
 
-export const navLinks = [
+export const navLinks: NavLink[] = [
   { name: 'Tentang', href: '#tentang' },
   { name: 'Pengalaman', href: '#pengalaman' },
   { name: 'Proyek', href: '#proyek' },
   { name: 'Kontak', href: '#kontak' },
 ];
 
-export const hardSkills = [
+export const hardSkills: Skill[] = [
   { name: 'UI/UX Design (Figma)', level: '90%', icon: '🎨' },
   { name: 'Multimedia & Broadcasting', level: '85%', icon: '🎥' },
   { name: 'Graphic Design (Photoshop)', level: '85%', icon: '🖼️' },
@@ -15,7 +16,7 @@ export const hardSkills = [
   { name: 'Java Programming (OOP)', level: '70%', icon: '☕' },
 ];
 
-export const experienceData = [
+export const experienceData: Experience[] = [
   {
     role: 'Kepala Departemen Hubungan Eksternal',
     organization: 'HMPSTI Universitas Brawijaya',
@@ -30,7 +31,7 @@ export const experienceData = [
   }
 ];
 
-export const projectData = [
+export const projectData: Project[] = [
   {
     title: 'VISTECH',
     tech: 'Relasi Strategis | IT Exposure',
