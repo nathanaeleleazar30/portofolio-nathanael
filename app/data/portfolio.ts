@@ -45,31 +45,55 @@ export const projectData: Project[] = [
   {
     title: 'VISTECH',
     tech: 'Relasi Strategis | IT Exposure',
-    slug: 'it-exposure', // <-- Koma sudah ditambahkan di sini
+    slug: 'it-exposure',
     description: 'Inisiatif program kerja di bawah Departemen Hubungan Eksternal. Target dari BPI HMPSTI untuk VISTECH pertama ini harus bagus dan mengincar company besar (perusahaan swasta/instansi skala Jawa Timur) untuk persiapan magang mahasiswa semester 4.',
-    gradient: 'from-blue-600 to-indigo-700'
+    gradient: 'from-blue-600 to-indigo-700',
+    caseStudy: {
+      background: 'VISTECH merupakan program kerja unggulan di bawah Departemen Hubungan Eksternal HMPSTI Universitas Brawijaya. Sebagai Kepala Departemen, saya bertanggung jawab merancang Grand Design dan menginisiasi program IT Exposure pertama yang bertujuan menjembatani mahasiswa dengan dunia industri teknologi.',
+      challenge: 'Sebagai program perdana, tantangan utamanya adalah membangun kepercayaan perusahaan besar skala Jawa Timur untuk berkolaborasi dengan organisasi kemahasiswaan, serta menyusun format acara yang relevan dan menarik bagi kedua belah pihak.',
+      solution: 'Saya membangun strategi komunikasi eksternal yang profesional, menyusun proposal kolaborasi yang matang, dan melakukan pendekatan langsung ke departemen HR dan CSR perusahaan swasta serta instansi pemerintah di Jawa Timur.',
+      results: 'Berhasil menjalin kemitraan dengan beberapa perusahaan teknologi dan instansi skala Jawa Timur, serta membuka peluang magang bagi mahasiswa semester 4 PSTI UB.'
+    },
   },
   {
     title: 'Ramadhan Charity Connect',
     tech: 'Sosial | Manajemen Acara',
     slug: 'ramadhan-charity-connect',
     description: 'Program sosial kolaboratif di bawah bendera HMPSTI untuk menjalin empati kemasyarakatan.',
-    gradient: 'from-emerald-500 to-teal-600'
+    gradient: 'from-emerald-500 to-teal-600',
+    caseStudy: {
+      background: 'Ramadhan Charity Connect adalah program sosial yang diinisiasi oleh HMPSTI untuk menumbuhkan semangat berbagi dan empati sosial di kalangan mahasiswa pada bulan Ramadhan. Program ini dirancang sebagai wadah kontribusi nyata kepada masyarakat sekitar kampus Universitas Brawijaya.',
+      challenge: 'Tantangan utamanya adalah mengkoordinasikan berbagai divisi dalam waktu yang terbatas di bulan Ramadhan, mengumpulkan donasi yang memadai dari seluruh angkatan, serta memastikan distribusi bantuan tepat sasaran ke komunitas yang membutuhkan.',
+      solution: 'Saya membantu merancang sistem penggalangan dana yang transparan, membentuk tim distribusi yang efisien, dan menjalin kerja sama dengan RT/RW setempat untuk pemetaan penerima manfaat agar bantuan tersalurkan dengan tepat.',
+      results: 'Program berhasil menyalurkan paket sembako dan santunan kepada puluhan keluarga di sekitar Malang, serta meningkatkan solidaritas dan kepedulian sosial antar mahasiswa PSTI.'
+    },
   },
   {
     title: 'Program Keolahragaan BEM',
     tech: 'Event Management | Leadership',
     slug: 'program-keolahragaan-bem',
     description: 'Menginisiasi dan mengeksekusi berbagai wadah minat bakat olahraga bagi mahasiswa.',
-    gradient: 'from-orange-500 to-rose-600'
+    gradient: 'from-orange-500 to-rose-600',
+    caseStudy: {
+      background: 'Sebagai Dirjen Olahraga Kementerian SENORA di BEM Fakultas Vokasi Universitas Brawijaya, saya melihat tingginya minat olahraga mahasiswa yang belum terfasilitasi dengan maksimal.',
+      challenge: 'Tantangan terbesarnya adalah menyatukan berbagai jadwal akademik mahasiswa yang padat dan mencari fasilitas olahraga yang memadai di sekitar area Malang dengan anggaran organisasi yang terbatas.',
+      solution: 'Saya memimpin tim untuk melakukan pemetaan minat, menjalin kemitraan dengan penyedia fasilitas olahraga lokal, dan merancang jadwal latihan rutin yang fleksibel serta kompetisi internal.',
+      results: 'Meningkatnya partisipasi mahasiswa dalam kegiatan non-akademik sebesar 40% dan terbentuknya 5 tim inti olahraga fakultas.'
+    },
   },
   {
     title: 'STIVOFEST 2026',
     tech: 'Festival Olahraga | Malang Raya',
     slug: 'stivofest-2026',
     description: 'Menginisiasi event olahraga yang menjadi wadah kompetisi dan kolaborasi antar kampus di Malang Raya.',
-    gradient: 'from-amber-600 to-amber-900'
-  }
+    gradient: 'from-amber-600 to-amber-900',
+    caseStudy: {
+      background: 'STIVOFEST 2026 adalah festival olahraga antar kampus yang diinisiasi oleh Kementerian SENORA BEM Fakultas Vokasi UB. Event ini dirancang sebagai ajang kompetisi sekaligus sarana mempererat hubungan antar mahasiswa dari berbagai perguruan tinggi di wilayah Malang Raya.',
+      challenge: 'Menyelenggarakan event berskala Malang Raya membutuhkan koordinasi masif lintas kampus, negosiasi venue yang mampu menampung peserta dari banyak institusi, serta pengelolaan anggaran yang ketat untuk memastikan event berjalan profesional.',
+      solution: 'Saya memimpin perencanaan strategis dari awal, termasuk membentuk panitia lintas kampus, mengamankan sponsorship dari brand olahraga lokal, dan merancang sistem pertandingan yang adil serta efisien untuk berbagai cabang olahraga.',
+      results: 'STIVOFEST 2026 berhasil diselenggarakan dengan partisipasi dari beberapa perguruan tinggi di Malang Raya, mempererat jejaring antar kampus, dan menjadi event olahraga tahunan perdana Fakultas Vokasi UB.'
+    },
+  },
 ];
 
 export const animationFadeUp = "transition-all duration-700 delay-100 group-hover:scale-105 group-hover:-translate-y-1 transform hover:-translate-y-2 hover:shadow-xl dark:hover:shadow-indigo-900/20";

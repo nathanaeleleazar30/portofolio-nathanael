@@ -25,6 +25,12 @@ export interface Project {
   tech: string;
   description: string;
   gradient: string;
+  caseStudy?: {
+    background: string;
+    challenge: string;
+    solution: string;
+    results?: string;
+  };
 }
 
 export interface SocialLinkData {

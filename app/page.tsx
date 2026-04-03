@@ -58,7 +58,7 @@ export default function Home() {
             </div>
 
             {/* KOLOM KIRI BAWAH: Kontak */}
-            <div className="lg:col-span-1 mt-6">
+            <div className="lg:col-span-1 space-y-14 mt-6">
               <ContactSection />
             </div>
 
