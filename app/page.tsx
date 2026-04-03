@@ -3,6 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import PageWrapper from './components/PageWrapper';
 
 // Extracted Sections
 import ProfileCard from './components/ui/ProfileCard';
@@ -14,6 +15,7 @@ import TechToolsScroll from './components/sections/TechToolsScroll';
 
 export default function Home() {
   return (
+    <PageWrapper>
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 selection:bg-indigo-100 dark:selection:bg-indigo-900/50 selection:text-indigo-900 dark:selection:text-indigo-100 font-sans relative transition-colors duration-300">
       <div className="bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10 dark:opacity-5 pointer-events-none absolute inset-0 z-0"></div>
 
@@ -74,5 +76,6 @@ export default function Home() {
 
       <Footer />
     </div>
+    </PageWrapper>
   );
 }

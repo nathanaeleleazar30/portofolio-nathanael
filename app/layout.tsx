@@ -45,7 +45,8 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      suppressHydrationWarning 
+      suppressHydrationWarning
+      data-scroll-behavior="smooth"
     >
       <head>
         {/* Inline script to prevent FOUC by setting theme before body renders */}

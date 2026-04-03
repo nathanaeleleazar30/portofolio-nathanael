@@ -4,6 +4,7 @@
 import React, { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useMotionValue, useSpring, useTransform, useMotionTemplate } from 'framer-motion';
+import PopupText from './PopupText';
 
 export default function ProfileCard() {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -65,12 +66,20 @@ export default function ProfileCard() {
 
         {/* === 1. TEKS ATAS === */}
         <div className="absolute top-10 left-0 right-0 z-30 text-center pointer-events-none" style={{ transform: "translateZ(50px)" }}>
-          <h1 className="text-3xl font-black text-slate-950 dark:text-white tracking-tight leading-tight transition-colors duration-500 group-hover:text-blue-900 dark:group-hover:text-white">
-            Nathanael Eleazar
-          </h1>
-          <p className="text-sm font-bold text-slate-700 dark:text-slate-300 mt-1 transition-colors duration-500 group-hover:text-blue-800 dark:group-hover:text-slate-100">
-            Undergraduate IT Student
-          </p>
+          <PopupText
+            text="Nathanael Eleazar"
+            as="h1"
+            className="text-3xl font-black text-slate-950 dark:text-white tracking-tight leading-tight transition-colors duration-500 group-hover:text-blue-900 dark:group-hover:text-white justify-center"
+            baseDelay={100}
+            wordDelay={120}
+          />
+          <PopupText
+            text="Undergraduate IT Student"
+            as="p"
+            className="text-sm font-bold text-slate-700 dark:text-slate-300 mt-1 transition-colors duration-500 group-hover:text-blue-800 dark:group-hover:text-slate-100 justify-center"
+            baseDelay={350}
+            wordDelay={100}
+          />
         </div>
 
         {/* === 2. FOTO PROFIL === */}

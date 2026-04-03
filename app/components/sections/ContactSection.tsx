@@ -3,6 +3,7 @@ import React from 'react';
 import ScrollReveal from '../ScrollReveal';
 import ContactForm from '../ContactForm';
 import SocialLink from '../ui/SocialLink';
+import PopupText from '../ui/PopupText';
 import SkillBar from '../ui/SkillBar';
 import { hardSkills } from '../../data/portfolio';
 import { SocialLinkData } from '../../../types/portfolio';
@@ -59,12 +60,22 @@ export default function ContactSection() {
           
           <h3 className="text-2xl font-black mb-4 flex items-center gap-3 relative z-10">
             <div className="w-2 h-8 bg-blue-500 rounded-full"></div>
-            Mari Berkolaborasi!
+            <PopupText
+              text="Mari Berkolaborasi!"
+              as="span"
+              className=""
+              onScroll
+              wordDelay={80}
+            />
           </h3>
           
-          <p className="text-slate-300 text-sm mb-6 relative z-10 font-medium leading-relaxed">
-            Jangan ragu untuk menghubungi saya untuk diskusi seputar teknologi, desain, atau peluang kerja sama.
-          </p>
+          <PopupText
+            text="Jangan ragu untuk menghubungi saya untuk diskusi seputar teknologi, desain, atau peluang kerja sama."
+            className="text-slate-300 text-sm mb-6 relative z-10 font-medium leading-relaxed"
+            onScroll
+            baseDelay={200}
+            wordDelay={30}
+          />
 
           <div className="space-y-4 relative z-10">
             {socialLinks.map((link, idx) => (

@@ -1,5 +1,8 @@
 // app/components/Footer.tsx
+'use client';
+
 import React from 'react';
+import PopupText from './ui/PopupText';
 
 export default function Footer() {
   return (
@@ -8,11 +11,21 @@ export default function Footer() {
         <div className="col-span-1 md:col-span-2 relative z-10">
           <h5 className="text-xl font-black mb-4 flex items-center gap-2">
             <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center font-black text-white text-sm">N</div>
-            Nathanael Eleazar
+            <PopupText
+              text="Nathanael Eleazar"
+              as="span"
+              className=""
+              onScroll
+              wordDelay={80}
+            />
           </h5>
-          <p className="text-slate-400 text-sm font-medium leading-relaxed max-w-md">
-            Membangun inovasi melalui teknologi, desain antarmuka, dan kolaborasi strategis. Siap berkontribusi untuk masa depan digital.
-          </p>
+          <PopupText
+            text="Membangun inovasi melalui teknologi, desain antarmuka, dan kolaborasi strategis. Siap berkontribusi untuk masa depan digital."
+            className="text-slate-400 text-sm font-medium leading-relaxed max-w-md"
+            onScroll
+            baseDelay={150}
+            wordDelay={30}
+          />
         </div>
         <div className="col-span-1 relative z-10">
           <h5 className="text-sm font-extrabold mb-4 uppercase text-slate-500 tracking-wider">Mari Terhubung</h5>

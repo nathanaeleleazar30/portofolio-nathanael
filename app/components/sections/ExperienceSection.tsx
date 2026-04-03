@@ -1,13 +1,20 @@
 // app/components/sections/ExperienceSection.tsx
 import React from 'react';
 import ScrollReveal from '../ScrollReveal';
+import PopupText from '../ui/PopupText';
 import { experienceData } from '../../data/portfolio';
 
 export default function ExperienceSection() {
   return (
     <div id="pengalaman" className="scroll-mt-28">
       <ScrollReveal>
-        <h2 className="text-2xl font-black text-slate-950 dark:text-white mb-8">Pengalaman Organisasi</h2>
+        <PopupText
+          text="Pengalaman Organisasi"
+          as="h2"
+          className="text-2xl font-black text-slate-950 dark:text-white mb-8"
+          onScroll
+          wordDelay={80}
+        />
       </ScrollReveal>
       <div className="space-y-6 relative before:absolute before:inset-y-0 before:left-[18px] before:w-0.5 before:bg-gradient-to-b before:from-blue-600 before:to-slate-200 dark:before:to-slate-700">
         {experienceData.map((exp, i) => (

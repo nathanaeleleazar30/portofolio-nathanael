@@ -2,13 +2,20 @@
 import React from 'react';
 import Link from 'next/link';
 import ScrollReveal from '../ScrollReveal';
+import PopupText from '../ui/PopupText';
 import { projectData } from '../../data/portfolio';
 
 export default function ProjectsSection() {
   return (
     <div id="proyek" className="scroll-mt-28">
       <ScrollReveal>
-        <h2 className="text-2xl font-black text-slate-950 dark:text-white mb-8">Proyek Unggulan</h2>
+        <PopupText
+          text="Proyek Unggulan"
+          as="h2"
+          className="text-2xl font-black text-slate-950 dark:text-white mb-8"
+          onScroll
+          wordDelay={80}
+        />
       </ScrollReveal>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

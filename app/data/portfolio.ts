@@ -43,6 +43,19 @@ export const experienceData: Experience[] = [
 
 export const projectData: Project[] = [
   {
+    title: 'Website Portofolio Pribadi',
+    tech: 'Next.js 16 | TypeScript | Tailwind CSS',
+    slug: 'website-portofolio',
+    description: 'Website portofolio modern yang dibangun dari nol menggunakan Next.js 16, TypeScript, dan Tailwind CSS. Menampilkan profil, pengalaman organisasi, tech stack, serta detail proyek secara interaktif dengan desain responsif dan fitur dark mode.',
+    gradient: 'from-violet-600 to-purple-800',
+    caseStudy: {
+      background: 'Sebagai mahasiswa Teknologi Informasi di Universitas Brawijaya, saya membutuhkan platform digital untuk menampilkan portofolio, skill, dan pengalaman organisasi secara profesional. Website ini dibangun sepenuhnya dari nol menggunakan teknologi modern agar bisa menjadi showcase kemampuan teknis sekaligus personal branding.',
+      challenge: 'Tantangannya adalah membangun website yang tidak hanya informatif tetapi juga memiliki UI/UX yang premium — termasuk implementasi dark mode yang konsisten, animasi scroll reveal yang smooth, dynamic routing untuk halaman detail setiap proyek, serta memastikan performa dan responsivitas di berbagai perangkat.',
+      solution: 'Saya menggunakan Next.js 16 App Router dengan TypeScript untuk type safety, Tailwind CSS untuk styling yang efisien, dan arsitektur komponen modular (ProfileCard, SectionCard, ScrollReveal, dll). Fitur-fitur utama meliputi: (1) Dark/Light Mode toggle dengan transisi halus, (2) Scroll Reveal Animation pada setiap section, (3) Dynamic Route /projects/[slug] untuk halaman case study setiap proyek, (4) Tech Stack Scroll marquee yang interaktif, (5) Layout grid responsif dengan glassmorphism card, (6) SEO-friendly dengan Next.js Image Optimization, dan (7) Deployment otomatis via Vercel dengan Git integration.',
+      results: 'Website berhasil di-deploy dan berjalan dengan performa optimal. Seluruh halaman mendapat skor Lighthouse yang tinggi, desain responsif di semua ukuran layar, dan menjadi portofolio digital utama yang merepresentasikan kemampuan full-stack development saya.'
+    },
+  },
+  {
     title: 'VISTECH',
     tech: 'Relasi Strategis | IT Exposure',
     slug: 'it-exposure',

@@ -2,8 +2,9 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image'; // <-- Tambahkan import ini
+import Image from 'next/image';
 import ScrollReveal from '../ScrollReveal';
+import PopupText from '../ui/PopupText';
 import { hardSkills } from '../../data/portfolio';
 
 export default function TechToolsScroll() {
@@ -12,7 +13,13 @@ export default function TechToolsScroll() {
             <div className="w-full mt-14 mb-8">
                 {/* Header Section */}
                 <div className="flex justify-between items-end mb-6">
-                    <h2 className="text-2xl font-black text-slate-950 dark:text-white">Tech Stack & Tools</h2>
+                    <PopupText
+                        text="Tech Stack & Tools"
+                        as="h2"
+                        className="text-2xl font-black text-slate-950 dark:text-white"
+                        onScroll
+                        wordDelay={80}
+                    />
                     <div className="flex items-center gap-2 text-slate-400">
                         <span className="text-[10px] font-black uppercase tracking-widest">Scroll</span>
                         <svg className="w-4 h-4 animate-bounce-x" fill="none" stroke="currentColor" viewBox="0 0 24 24">
