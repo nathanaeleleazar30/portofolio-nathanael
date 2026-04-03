@@ -8,14 +8,24 @@ export const navLinks: NavLink[] = [
   { name: 'Kontak', href: '#kontak' },
 ];
 
-export const hardSkills: Skill[] = [
-  { name: 'UI/UX Design (Figma)', level: '90%', icon: '🎨' },
-  { name: 'Multimedia & Broadcasting', level: '85%', icon: '🎥' },
-  { name: 'Graphic Design (Photoshop)', level: '85%', icon: '🖼️' },
-  { name: 'ReactJS, Next.js & Tailwind', level: '75%', icon: '💻' },
-  { name: 'Java Programming (OOP)', level: '70%', icon: '☕' },
-];
+// Di dalam app/data/portfolio.ts
 
+// app/data/portfolio.ts
+
+export const hardSkills: Skill[] = [
+  { name: 'HTML5', level: 'Language', icon: '/icons/html5.svg' },
+  { name: 'CSS', level: 'Language', icon: '/icons/css.svg' },
+  { name: 'JavaScript', level: 'Language', icon: '/icons/javascript.svg' },
+  { name: 'TypeScript', level: 'Language', icon: '/icons/typescript.svg' },
+  { name: 'React', level: 'Library', icon: '/icons/react.svg' },
+  { name: 'Next.js', level: 'Framework', icon: '/icons/nextdotjs.svg' },
+  { name: 'Tailwind CSS', level: 'Framework', icon: '/icons/tailwindcss.svg' },
+  { name: 'Node.js', level: 'Runtime', icon: '/icons/nodedotjs.svg' },
+  { name: 'MySQL', level: 'Database', icon: '/icons/mysql.svg' },
+  { name: 'Git & GitHub', level: 'Repository', icon: '/icons/github.svg' },
+  { name: 'Figma', level: 'Design App', icon: '/icons/figma.svg' },
+  { name: 'Canva', level: 'Design App', icon: '/icons/canva.svg' },
+];
 export const experienceData: Experience[] = [
   {
     role: 'Kepala Departemen Hubungan Eksternal',

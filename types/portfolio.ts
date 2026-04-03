@@ -9,7 +9,7 @@ export interface NavLink {
 export interface Skill {
   name: string;
   level: string;
-  icon: string | ReactNode;
+  icon: string;
 }
 
 export interface Experience {
