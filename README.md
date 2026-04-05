@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Nathanael's Personal IT Portfolio
 
-## Getting Started
+A modern, highly interactive personal portfolio website built to showcase my journey as an Information Technology student, web developer, and creative designer. 
 
-First, run the development server:
+![Portfolio Preview](public/gallery/website_portofolio.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Key Features
+* **Smart Splash Screen:** A seamless, state-preserved initial loading animation that doesn't annoy users during page navigation.
+* **Dynamic Case Studies:** Built with Next.js App Router ([slug]), allowing easy addition of new projects with deep-dive technical explanations, problem-solving stories, and live demo links.
+* **Interactive UI/UX:** Features a 3D holographic profile card, smooth page transitions, and hover effects powered by Framer Motion.
+* **Project Documentation Gallery:** A masonry-style photo gallery with a built-in lightbox modal to showcase UI/UX designs and event documentations.
+* **Tech Stack Showcase:** A smooth, manually scrollable marquee to display programming languages and tools.
+* **Dark/Light Mode Ready:** Fully styled with Tailwind's dark mode utilities for comfortable viewing in any environment.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
+* **Framework:** Next.js (App Router)
+* **Library:** React.js
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS
+* **Animation:** Framer Motion
+* **Deployment:** Vercel
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📂 Project Structure
+- `/app` - Next.js App Router layout, pages, and global styles.
+  - `/components` - Reusable UI components (Navbar, Cards, Splash Screen, Sections).
+  - `/data` - Centralized data configuration (portfolio.ts) for projects, skills, and gallery items.
+  - `/projects/[slug]` - Dynamic route for generating individual Case Study pages.
+- `/public` - Static assets, images, SVG icons, and gallery documentations.
+- `/types` - TypeScript interfaces for strong typing across the application.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⚙️ Local Installation & Setup
 
-## Learn More
+1. Clone the repository:
+   `git clone https://github.com/nathanaeleleazar30/portofolio-nathanael.git`
 
-To learn more about Next.js, take a look at the following resources:
+2. Navigate to the project directory:
+   `cd portofolio-nathanael`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Install dependencies:
+   `npm install`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Run the development server:
+   `npm run dev`
 
-## Deploy on Vercel
+5. Open your browser:
+   Navigate to http://localhost:3000 to see the application in action.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🤝 Contact & Connections
+Let's connect! I'm always open to discussing tech, web development, and organizational leadership.
+* **LinkedIn:** https://linkedin.com/in/YOUR-LINKEDIN-URL
+* **Instagram:** https://instagram.com/nthanaellll
+* **University:** Universitas Brawijaya - Information Technology
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Designed & Developed with ☕ and ❤️ by Nathanael Eleazar.*
