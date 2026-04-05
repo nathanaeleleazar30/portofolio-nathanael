@@ -25,11 +25,14 @@ export interface Project {
   tech: string;
   description: string;
   gradient: string;
+  githubLink?: string;
+  liveLink?: string;
   caseStudy?: {
     background: string;
     challenge: string;
     solution: string;
     results?: string;
+    gallery?: string[];
   };
 }
 
