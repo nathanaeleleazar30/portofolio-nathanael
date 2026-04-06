@@ -47,7 +47,7 @@ A modern, highly interactive personal portfolio website built to showcase my jou
 
 ## 🤝 Contact & Connections
 Let's connect! I'm always open to discussing tech, web development, and organizational leadership.
-* **LinkedIn:** https://linkedin.com/in/YOUR-LINKEDIN-URL
+* **LinkedIn:** https://www.linkedin.com/in/nathanael-eleazar/
 * **Instagram:** https://instagram.com/nthanaellll
 * **University:** Universitas Brawijaya - Information Technology
 
