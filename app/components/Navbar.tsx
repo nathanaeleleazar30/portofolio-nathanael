@@ -2,6 +2,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useTheme } from '../ThemeContext';
 import { navLinks } from '../data/portfolio';
 
@@ -12,7 +13,13 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800/50 shadow-sm transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center font-black text-white text-lg shadow-lg shadow-blue-500/20">N</div>
+          <Image
+            src="/favicon.ico"
+            alt="Logo"
+            width={32}
+            height={32}
+            className="w-8 h-8 rounded-xl shadow-lg shadow-blue-500/20 object-contain"
+          />
           <span className="text-xl font-extrabold tracking-tight text-slate-950 dark:text-white transition-colors duration-300">Nathanael</span>
         </div>
         

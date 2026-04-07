@@ -2,8 +2,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "./ThemeContext"; 
+import { ThemeProvider } from "./ThemeContext";
 import { Analytics } from "@vercel/analytics/react";
+import CustomCursor from "./components/ui/CustomCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     siteName: 'Nathanael Portfolio',
     images: [
       {
-        url: '/foto-profil.jpg', 
+        url: '/foto-profil.jpg',
         width: 800,
         height: 600,
       },
@@ -66,8 +67,9 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         <ThemeProvider>
+          <CustomCursor />
           {children}
-          <Analytics /> 
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

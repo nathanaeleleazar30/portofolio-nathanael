@@ -2,6 +2,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import PopupText from './ui/PopupText';
 
 export default function Footer() {
@@ -10,7 +11,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 border-b border-slate-800 pb-10 mb-8 relative z-10">
         <div className="col-span-1 md:col-span-2 relative z-10">
           <h5 className="text-xl font-black mb-4 flex items-center gap-2">
-            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center font-black text-white text-sm">N</div>
+            <Image
+              src="/favicon.ico"
+              alt="Logo"
+              width={24}
+              height={24}
+              className="w-6 h-6 rounded-lg object-contain"
+            />
             <PopupText
               text="Nathanael Eleazar"
               as="span"
