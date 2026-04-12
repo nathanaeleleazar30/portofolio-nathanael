@@ -6,22 +6,22 @@ import { motion, useSpring, useMotionValue } from "framer-motion";
 const CustomCursor = () => {
   const [isHovering, setIsHovering] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
-  // Use motion values for smoother, higher-performance movement.
-  const cursorX = useMotionValue(-100);
-  const cursorY = useMotionValue(-100);
+  // Core position
+  const mouseX = useMotionValue(-100);
+  const mouseY = useMotionValue(-100);
 
-  // Damping and stiffness for high-end "elastic" feel
-  const springConfig = { damping: 25, stiffness: 400 };
-  const cursorXSpring = useSpring(cursorX, springConfig);
-  const cursorYSpring = useSpring(cursorY, springConfig);
+  // Smooth trail for the outer ring
+  const trailX = useSpring(mouseX, { damping: 30, stiffness: 200 });
+  const trailY = useSpring(mouseY, { damping: 30, stiffness: 200 });
 
   useEffect(() => {
-    const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isVisible) setIsVisible(true);
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
 
-      // Check if hovering over interactive elements
       const target = e.target as HTMLElement;
       const isInteractive =
         target.closest("button") ||
@@ -33,65 +33,66 @@ const CustomCursor = () => {
       setIsHovering(!!isInteractive);
     };
 
+    const handleMouseLeave = () => setIsVisible(false);
+    const handleMouseEnter = () => setIsVisible(true);
     const handleMouseDown = () => setIsClicking(true);
     const handleMouseUp = () => setIsClicking(false);
 
-    window.addEventListener("mousemove", moveCursor);
+    window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mouseup", handleMouseUp);
+    document.addEventListener("mouseleave", handleMouseLeave);
+    document.addEventListener("mouseenter", handleMouseEnter);
 
     return () => {
-      window.removeEventListener("mousemove", moveCursor);
+      window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mouseup", handleMouseUp);
+      document.removeEventListener("mouseleave", handleMouseLeave);
+      document.removeEventListener("mouseenter", handleMouseEnter);
     };
-  }, [cursorX, cursorY]);
+  }, [mouseX, mouseY, isVisible]);
+
+  if (typeof window === "undefined") return null;
 
   return (
     <>
-      {/* Outer Ring */}
-      <motion.div
-        className="fixed top-0 left-0 w-8 h-8 rounded-full border border-primary/40 pointer-events-none z-[9999] hidden lg:block"
-        style={{
-          translateX: cursorXSpring,
-          translateY: cursorYSpring,
-          x: "-50%",
-          y: "-50%",
-        }}
-        animate={{
-          scale: isClicking ? 0.7 : isHovering ? 1.5 : 1,
-          borderColor: isHovering
-            ? "rgba(147, 51, 234, 0.6)" // Purple-600 with opacity
-            : "rgba(107, 114, 128, 0.4)", // Gray-500 with opacity
-          backgroundColor: isHovering 
-            ? "rgba(147, 51, 234, 0.05)" 
-            : "rgba(0, 0, 0, 0)",
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 300,
-          damping: 20,
-        }}
-      />
+      <div className="fixed inset-0 pointer-events-none z-[9999] hidden lg:block">
+        {/* Outer Ring / Trail */}
+        <motion.div
+          className="absolute top-0 left-0 w-10 h-10 rounded-full border border-indigo-500/30 dark:border-indigo-400/20"
+          style={{
+            x: trailX,
+            y: trailY,
+            translateX: "-50%",
+            translateY: "-50%",
+            opacity: isVisible ? 1 : 0,
+          }}
+          animate={{
+            scale: isClicking ? 0.8 : isHovering ? 2 : 1,
+            backgroundColor: isHovering ? "rgba(99, 102, 241, 0.1)" : "rgba(99, 102, 241, 0)",
+          }}
+        />
 
-      {/* Inner Dot */}
-      <motion.div
-        className="fixed top-0 left-0 w-1.5 h-1.5 bg-primary rounded-full pointer-events-none z-[9999] hidden lg:block"
-        style={{
-          x: cursorX,
-          y: cursorY,
-          translateX: "-50%",
-          translateY: "-50%",
-        }}
-        animate={{
-          scale: isClicking ? 1.5 : isHovering ? 0.5 : 1,
-          backgroundColor: isHovering ? "#9333ea" : "#6366f1", // purple-600 to indigo-500
-        }}
-      />
+        {/* Inner Dot */}
+        <motion.div
+          className="absolute top-0 left-0 w-2 h-2 bg-indigo-600 dark:bg-indigo-400 rounded-full shadow-[0_0_10px_rgba(99,102,241,0.5)]"
+          style={{
+            x: mouseX,
+            y: mouseY,
+            translateX: "-50%",
+            translateY: "-50%",
+            opacity: isVisible ? 1 : 0,
+          }}
+          animate={{
+            scale: isClicking ? 1.5 : isHovering ? 0.5 : 1,
+          }}
+        />
+      </div>
 
       <style jsx global>{`
         @media (min-width: 1024px) {
-          body, a, button {
+          body, a, button, input, textarea {
             cursor: none !important;
           }
         }

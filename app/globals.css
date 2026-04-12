@@ -2,10 +2,12 @@
 
 @import "tailwindcss";
 
-/* Pastikan menggunakan sintaks :where agar mencakup seluruh anak elemen */
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  --font-outfit: var(--font-outfit);
+  --font-inter: var(--font-inter);
+
   --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
 
   @keyframes fade-in-up {
@@ -22,37 +24,18 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
-  }
-}
-
-@theme {
-  --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
-
-  @keyframes fade-in-up {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-
-@layer base {
-  html {
-    scroll-behavior: smooth;
+    @apply scroll-smooth;
+    font-family: var(--font-inter), ui-sans-serif, system-ui;
   }
   
-  /* Mencegah transisi warna yang kasar saat halaman pertama kali dimuat */
+  h1, h2, h3, h4, .font-outfit {
+    font-family: var(--font-outfit), ui-sans-serif, system-ui;
+  }
+
   body {
-    @apply transition-colors duration-300;
+    @apply transition-colors duration-300 antialiased;
   }
 }
-/* app/globals.css */
-/* ... kode sebelumnya biarkan saja ... */
 
 /* === CUSTOM SCROLLBAR === */
 ::-webkit-scrollbar {
@@ -73,4 +56,9 @@ html.dark ::-webkit-scrollbar-thumb {
 }
 html.dark ::-webkit-scrollbar-thumb:hover {
   background-color: #475569; /* slate-600 */
+}
+
+/* Selection */
+::selection {
+  @apply bg-indigo-500/30 text-indigo-900 dark:text-indigo-100;
 }

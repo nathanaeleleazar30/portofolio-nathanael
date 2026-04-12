@@ -5,6 +5,7 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useMotionValue, useSpring, useTransform, useMotionTemplate } from 'framer-motion';
 import PopupText from './PopupText';
+import Magnetic from './Magnetic';
 
 export default function ProfileCard() {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -65,7 +66,7 @@ export default function ProfileCard() {
         <div className="absolute inset-0 z-10 opacity-10 rounded-[2.4rem] bg-[url('https://www.transparenttextures.com/patterns/grid.png')]"></div>
 
         {/* === 1. TEKS ATAS === */}
-        <div className="absolute top-10 left-0 right-0 z-30 text-center pointer-events-none" style={{ transform: "translateZ(50px)" }}>
+        <div className="absolute top-10 left-0 right-0 z-30 text-center pointer-events-none font-outfit" style={{ transform: "translateZ(50px)" }}>
           <PopupText
             text="Nathanael Eleazar"
             as="h1"
@@ -120,10 +121,12 @@ export default function ProfileCard() {
             </div>
           </div>
 
-          <a href="/CV_NATHANAEL.pdf" download className="px-4 py-2.5 bg-gradient-to-br from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white text-xs font-extrabold rounded-2xl shadow-xl shadow-indigo-500/30 transition-all duration-300 flex items-center gap-2 transform hover:-translate-y-1 active:scale-95 disabled:opacity-70">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-            CV
-          </a>
+          <Magnetic>
+            <a href="/CV_NATHANAEL.pdf" download className="px-5 py-3 bg-gradient-to-br from-indigo-600 to-blue-700 hover:from-indigo-700 hover:to-blue-800 text-white text-xs font-black rounded-2xl shadow-xl shadow-indigo-500/30 transition-all duration-300 flex items-center gap-2 transform active:scale-95 disabled:opacity-70">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+              CV
+            </a>
+          </Magnetic>
 
         </div>
 
